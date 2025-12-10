@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-charcoal antialiased font-sans;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    @apply font-heading font-bold;
+    font-size: 48px;
+    line-height: 1.5;
+  }
+  
+  h2 {
+    @apply font-heading font-semibold;
+    font-size: 36px;
+    line-height: 1.5;
+  }
+  
+  h3 {
+    @apply font-heading font-semibold;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-green-accent;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green-accent hover:bg-[#8FD030] text-white font-semibold py-3 px-6 rounded-button transition-all duration-200 shadow-lg hover:shadow-xl active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply bg-charcoal hover:bg-[#2F2F2F] text-white font-semibold py-3 px-6 rounded-button border border-green-accent transition-all duration-200 hover:border-[#8FD030];
+  }
+  
+  .card {
+    @apply bg-white rounded-card shadow-card p-card-padding border border-light-gray hover:shadow-card-hover transition-shadow duration-200;
+  }
+  
+  .card-dark {
+    @apply bg-charcoal rounded-card shadow-card p-card-padding border border-[#333333] hover:shadow-card-hover transition-shadow duration-200;
+  }
+  
+  .panel {
+    @apply bg-white rounded-card shadow-card p-card-padding border border-light-gray;
+  }
+  
+  .panel-dark {
+    @apply bg-charcoal rounded-card shadow-card p-card-padding border border-[#333333];
+  }
+  
+  .section-padding {
+    @apply py-section-padding-mobile md:py-section-padding;
+  }
+  
+  .section-margin {
+    @apply mb-section-margin-mobile md:mb-section-margin;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-[#2F2F2F] rounded;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-light-gray rounded hover:bg-[#AAAAAA];
+  }
+  
+  .kpi-card {
+    @apply bg-charcoal rounded-card shadow-card p-card-padding border border-[#333333];
+  }
+  
+  .kpi-value {
+    @apply text-green-accent font-bold;
+  }
+  
+  .kpi-label {
+    @apply text-light-gray text-sm;
+  }
+  
+  .bg-texture {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(31, 31, 31, 0.03) 1px, transparent 0),
+      radial-gradient(circle at 1px 1px, rgba(162, 232, 61, 0.02) 1px, transparent 0);
+    background-size: 40px 40px, 60px 60px;
+    background-position: 0 0, 20px 20px;
+  }
+  
+  .bg-animated-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(245, 245, 245, 1) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .floating-shapes {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .floating-shapes::before,
+  .floating-shapes::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  
+  .floating-shapes::before {
+    background: radial-gradient(circle, rgba(162, 232, 61, 0.3) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: float1 20s ease-in-out infinite;
+  }
+  
+  .floating-shapes::after {
+    background: radial-gradient(circle, rgba(31, 31, 31, 0.2) 0%, transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    animation: float2 25s ease-in-out infinite;
+  }
+  
+  @keyframes float1 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+  
+  @keyframes float2 {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(-30px, 30px) scale(1.1);
+    }
+    66% {
+      transform: translate(20px, -20px) scale(0.9);
+    }
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(31, 31, 31, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 31, 31, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
