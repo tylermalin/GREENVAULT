@@ -16,8 +16,8 @@ module.exports = {
         white: '#FFFFFF',
       },
       fontFamily: {
-        sans: ['Roboto', 'Open Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        heading: ['Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        heading: ['Poppins', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'h1': ['48px', { lineHeight: '1.5', fontWeight: '700' }],

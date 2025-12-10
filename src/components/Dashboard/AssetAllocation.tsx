@@ -25,7 +25,7 @@ export default function AssetAllocation({ holdings }: AssetAllocationProps) {
     { label: 'Crypto', value: 'crypto' },
     { label: 'Stablecoins', value: 'stablecoin' },
     { label: 'Carbon Credits', value: 'carbon_credit' },
-    { label: 'ESG Assets', value: 'carbon_credit' },
+    { label: 'ESG Assets', value: 'alternative' },
   ];
 
   const filteredHoldings = selectedFilter === 'all' 
@@ -64,9 +64,9 @@ export default function AssetAllocation({ holdings }: AssetAllocationProps) {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
         <h3 className="text-lg font-semibold text-white mb-4 sm:mb-0">Asset Allocation</h3>
         <div className="flex flex-wrap gap-2">
-          {filters.map((filter) => (
+          {filters.map((filter, index) => (
             <button
-              key={filter.value}
+              key={`${filter.value}-${index}`}
               onClick={() => setSelectedFilter(filter.value)}
               className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
                 selectedFilter === filter.value

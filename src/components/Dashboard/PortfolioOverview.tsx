@@ -41,25 +41,29 @@ export default function PortfolioOverview({ data, historicalData }: PortfolioOve
     <div className="space-y-6">
       {/* Total Holdings */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="card-dark">
+        <div className="card-dark overflow-hidden">
           <p className="text-sm text-light-gray mb-1">Total Holdings</p>
-          <p className="text-2xl font-bold text-white">{formatCurrency(data.totalHoldings)}</p>
+          <p className="text-lg md:text-xl lg:text-2xl font-bold text-white break-all" title={formatCurrency(data.totalHoldings)}>
+            {formatCurrency(data.totalHoldings)}
+          </p>
         </div>
-        <div className="card-dark">
+        <div className="card-dark overflow-hidden">
           <p className="text-sm text-light-gray mb-1">Current Value</p>
-          <div className="flex items-center space-x-2">
-            <p className="text-2xl font-bold text-white">{formatCurrency(data.currentValue)}</p>
-            <div className={`flex items-center ${data.change24h >= 0 ? 'text-green-accent' : 'text-red-500'}`}>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 gap-1 sm:gap-0">
+            <p className="text-lg md:text-xl lg:text-2xl font-bold text-white break-all flex-shrink" title={formatCurrency(data.currentValue)}>
+              {formatCurrency(data.currentValue)}
+            </p>
+            <div className={`flex items-center flex-shrink-0 ${data.change24h >= 0 ? 'text-green-accent' : 'text-red-500'}`}>
               {data.change24h >= 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-              <span className="text-sm font-medium">{formatPercent(data.change24h)}</span>
+              <span className="text-sm font-medium whitespace-nowrap">{formatPercent(data.change24h)}</span>
             </div>
           </div>
           <p className="text-xs text-light-gray mt-1">24h change</p>
         </div>
-        <div className="card-dark">
+        <div className="card-dark overflow-hidden">
           <p className="text-sm text-light-gray mb-1">7-Day Change</p>
-          <div className="flex items-center space-x-2">
-            <p className={`text-2xl font-bold ${data.change7d >= 0 ? 'text-green-accent' : 'text-red-500'}`}>
+          <div className="flex items-center">
+            <p className={`text-lg md:text-xl lg:text-2xl font-bold break-all ${data.change7d >= 0 ? 'text-green-accent' : 'text-red-500'}`}>
               {formatPercent(data.change7d)}
             </p>
           </div>

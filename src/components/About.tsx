@@ -24,7 +24,7 @@ export default function About() {
   return (
     <section id="about" className="section-padding bg-white section-margin relative bg-texture bg-animated-gradient floating-shapes">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-charcoal mb-4">
             Who We Are
           </h2>
@@ -35,10 +35,11 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature) => {
+          {features.map((feature, index) => {
             const Icon = feature.icon;
+            const delayClass = index === 0 ? 'fade-in-delay-1' : index === 1 ? 'fade-in-delay-2' : 'fade-in-delay-3';
             return (
-              <div key={feature.title} className="text-center">
+              <div key={feature.title} className={`text-center ${delayClass}`}>
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-[#2F2F2F] rounded-card mb-4">
                   <Icon className="w-8 h-8 text-green-accent" />
                 </div>

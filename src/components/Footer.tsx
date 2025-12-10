@@ -13,9 +13,9 @@ export default function Footer() {
             <Image
               src="/greenstone.png"
               alt="Greenstone Vault"
-              width={180}
-              height={60}
-              className="h-10 w-auto mb-4"
+              width={240}
+              height={80}
+              className="h-12 md:h-16 w-auto mb-4 logo-hover"
             />
             <p className="text-light-gray max-w-md">
               Enterprise-grade digital asset treasury platform. Secure, transparent, and connected.
@@ -27,22 +27,22 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#about" className="text-light-gray hover:text-green-accent transition-colors">
+                <Link href="#about" className="text-light-gray hover:text-green-accent transition-all duration-300 hover:translate-x-1 inline-block">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#product" className="text-light-gray hover:text-green-accent transition-colors">
+                <Link href="#product" className="text-light-gray hover:text-green-accent transition-all duration-300 hover:translate-x-1 inline-block">
                   Product
                 </Link>
               </li>
               <li>
-                <Link href="#integrations" className="text-light-gray hover:text-green-accent transition-colors">
+                <Link href="#integrations" className="text-light-gray hover:text-green-accent transition-all duration-300 hover:translate-x-1 inline-block">
                   Integrations
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="text-light-gray hover:text-green-accent transition-colors">
+                <Link href="#faq" className="text-light-gray hover:text-green-accent transition-all duration-300 hover:translate-x-1 inline-block">
                   FAQ
                 </Link>
               </li>
@@ -54,14 +54,22 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:sales@greenstonevault.com" className="text-light-gray hover:text-green-accent transition-colors">
-                  sales@greenstonevault.com
+                <a 
+                  href="mailto:Tyler@beneficial.technology" 
+                  className="text-light-gray hover:text-green-accent transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  Tyler@beneficial.technology
                 </a>
               </li>
               <li>
-                <button className="text-light-gray hover:text-green-accent transition-colors text-left">
+                <a 
+                  href="https://calendar.app.google/NMUpSnNEPRjJ4JED6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-light-gray hover:text-green-accent transition-all duration-300 hover:translate-x-1 inline-block"
+                >
                   Schedule a Demo
-                </button>
+                </a>
               </li>
             </ul>
           </div>

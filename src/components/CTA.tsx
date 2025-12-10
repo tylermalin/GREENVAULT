@@ -28,15 +28,25 @@ export default function CTA() {
           and ESG integration to your corporate treasury.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="btn-primary flex items-center justify-center space-x-2 group" aria-label="Schedule a demo">
-            <Calendar className="w-5 h-5" />
+          <a 
+            href="https://calendar.app.google/NMUpSnNEPRjJ4JED6" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-primary btn-micro flex items-center justify-center space-x-2 group" 
+            aria-label="Schedule a demo"
+          >
+            <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
             <span>Schedule a Demo</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="btn-secondary flex items-center justify-center space-x-2" aria-label="Contact sales">
+          </a>
+          <a 
+            href="mailto:Tyler@beneficial.technology" 
+            className="btn-secondary btn-micro flex items-center justify-center space-x-2" 
+            aria-label="Contact sales"
+          >
             <Mail className="w-5 h-5" />
             <span>Contact Sales</span>
-          </button>
+          </a>
         </div>
       </div>
     </section>
